@@ -7,4 +7,3 @@ urlpatterns = [
       path('cats/', views.cat_index, name='cat-index'),
 
 ]
-
