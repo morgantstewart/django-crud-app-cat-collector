@@ -14,6 +14,9 @@ class Cat(models.Model):
     breed = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
     age = models.IntegerField()
+    
+    def __str__(self):
+        return self.name
 
 class Feeding(models.Model):
     date = models.DateField()
@@ -24,8 +27,7 @@ class Feeding(models.Model):
         # set the default value for meal to be 'B'
         default=MEALS[0][0]
     )
-
-        cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
 
 
     def __str__(self):

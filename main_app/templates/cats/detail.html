@@ -25,12 +25,15 @@
 </section>
 
 
-{% endblock %}
-
-
 <!-- Existing cat-container above -->
 <div class="feedings-toy-container">
   <section class="feedings">
+          <h3>Add a Feeding</h3>
+<form method="post" class="subsection-content" autocomplete="off">
+  {% csrf_token %} 
+  {{ feeding_form.as_p }}
+  <button type="submit" class="btn submit">Add Feeding</button>
+</form>
     <div class="subsection-title">
       <h2>Feedings</h2>
       <img
